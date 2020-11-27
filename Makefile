@@ -74,3 +74,13 @@ gocoverutil:
 	@$(GO) get -u github.com/AlekSi/gocoverutil
 
 .PHONY: all style format build test vet tarball docker promu
+
+gt-docker-build:
+	docker build \
+		-t ghcr.io/gtrafimenkov/rds_exporter:latest \
+		-t ghcr.io/gtrafimenkov/rds_exporter:0.7.0-1 \
+		.
+
+gt-docker-push:
+	docker push ghcr.io/gtrafimenkov/rds_exporter:latest
+	docker push ghcr.io/gtrafimenkov/rds_exporter:0.7.0-1
