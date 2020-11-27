@@ -1,5 +1,22 @@
 # RDS Exporter
 
+Build instructions:
+
+```
+go mod init github.com/percona/rds_exporter
+go mod vendor
+go build .
+```
+
+Publish docker images instructions:
+
+```
+make gt-docker-build
+make gt-docker-push
+```
+
+---
+
 [![Release](https://img.shields.io/github/release/percona/rds_exporter.svg?style=flat)](https://github.com/percona/rds_exporter/releases/latest)
 [![Build Status](https://travis-ci.com/percona/rds_exporter.svg?branch=master)](https://travis-ci.com/percona/rds_exporter)
 [![Go Report Card](https://goreportcard.com/badge/github.com/percona/rds_exporter)](https://goreportcard.com/report/github.com/percona/rds_exporter)
