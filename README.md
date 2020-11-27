@@ -5,7 +5,7 @@ Build instructions:
 ```
 go mod init github.com/percona/rds_exporter
 go mod vendor
-go build .
+make gt-build
 ```
 
 Publish docker images instructions:

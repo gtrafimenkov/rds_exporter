@@ -75,12 +75,16 @@ gocoverutil:
 
 .PHONY: all style format build test vet tarball docker promu
 
+gt-build:
+	CGO_ENABLED=0 go build .
+	ldd rds_exporter
+
 gt-docker-build:
 	docker build \
 		-t ghcr.io/gtrafimenkov/rds_exporter:latest \
-		-t ghcr.io/gtrafimenkov/rds_exporter:0.7.0-1 \
+		-t ghcr.io/gtrafimenkov/rds_exporter:0.7.0-2 \
 		.
 
 gt-docker-push:
 	docker push ghcr.io/gtrafimenkov/rds_exporter:latest
-	docker push ghcr.io/gtrafimenkov/rds_exporter:0.7.0-1
+	docker push ghcr.io/gtrafimenkov/rds_exporter:0.7.0-2
